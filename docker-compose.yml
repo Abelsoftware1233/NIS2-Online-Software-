@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  nis2-tool:
+    build: .
+    ports:
+      - "5077:5077"
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
