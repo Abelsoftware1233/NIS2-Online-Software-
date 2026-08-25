@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements_online.txt .
+RUN pip install --no-cache-dir -r requirements_online.txt
+
+COPY app_online.py .
+
+EXPOSE 5077
+
+ENV PORT=5077
+
+CMD ["python", "app_online.py"]
